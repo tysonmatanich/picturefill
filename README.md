@@ -6,7 +6,7 @@ A Responsive Images approach that you can use today, that mimics the [proposed p
 * Original Author: Scott Jehl
 * License: MIT/GPLv2
 
-**Note:** Picturefill includes three other scripts that help detect the following: viewport width, device pixel width, device pixel ratio. These scripts are also avalible on GitHub for stand alone use.
+**Note:** Picturefill includes three other scripts that help detect the following: viewport width, device pixel width, device pixel ratio. These scripts are also available on GitHub for standalone use.
 
 * [GetViewportWidth]:(http://github.com/tysonmatanich/GetViewportWidth)
 * [GetDevicePixelWidth]:(http://github.com/tysonmatanich/GetDevicePixelWidth)
@@ -40,7 +40,7 @@ Each `div[data-src]` element’s `data-media` attribute accepts the following me
 * `(max-device-pixel-width: 800px)` *
 * `(min-device-pixel-ratio: 2)`
 
-Or you can use a compond media query such as the following:
+Or you can use a compound media query such as the following:
 
 * `(min-width: 320px) and (min-device-pixel-ratio: 2)`
 
