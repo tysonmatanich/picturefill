@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">@-ms-viewport{width:device-width}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Picturefill</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="../picturefill.js"></script>
+</head>
+<body>
+    <div class="info">
+        <h1>Picturefill</h1>
+        <h2>compound media queries</h2>
+        <p>Allows compound media queries to be used to determine which image source should be used.</p>
+        <h3>Instructions</h3>
+        <p>Scale your browser's viewport to 480px or less on a device that has a device pixel ratio of 2 or higher (such as an iPhone 4) and compare the result to a device that has a device pixel ratio of less than 2.</p>
+    </div>
+
+    <div data-picture data-alt="Picturefill test">
+        <div data-src="img/default.png"></div>
+        <div data-src="img/480x135.png"  data-media="(max-width: 480px)"></div>
+        <div data-src="img/1024x228.png" data-media="(max-width: 480px) and (min-device-pixel-ratio: 2.0)"></div>
+        <div data-src="img/320x90.png"   data-media="(max-width: 320px)"></div>
+        <div data-src="img/640x180.png"  data-media="(max-width: 320px) and (min-device-pixel-ratio: 2.0)"></div>
+        <noscript><img src="img/noscript.png" alt="Picturefill test" /></noscript>
+    </div>
+
+    <h3>Code sample</h3>
+    <code><span class="nt">&lt;div</span> <span class="na">data-picture</span> <span class="na">data-alt=</span><span class="s">"Picturefill test"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/default.png"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/480x135.png"</span>  <span class="na">data-media=</span><span class="s">"(max-width: 480px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/1024x228.png"</span> <span class="na">data-media=</span><span class="s">"(max-width: 480px) and (min-device-pixel-ratio: 2.0)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/320x90.png"</span>   <span class="na">data-media=</span><span class="s">"(max-width: 320px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/640x180.png"</span>  <span class="na">data-media=</span><span class="s">"(max-width: 320px) and (min-device-pixel-ratio: 2.0)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;noscript&gt;&lt;img</span> <span class="na">src=</span><span class="s">"img/noscript.png"</span> <span class="na">alt=</span><span class="s">"Picturefill test"</span> <span class="nt">/&gt;&lt;/noscript&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code>
+
+    <div class="info">
+        <p>Need more info? <a href="http://github.com/tysonmatanich/picturefill">View the project</a><br />Author: <a href="http://www.matanich.com">Tyson Matanich</a></p>
+    </div>
+</body>
+</html>

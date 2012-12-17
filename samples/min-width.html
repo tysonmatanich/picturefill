@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">@-ms-viewport{width:device-width}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Picturefill</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="../picturefill.js"></script>
+</head>
+<body>
+    <div class="info">
+        <h1>Picturefill</h1>
+        <h2>min-width</h2>
+        <p>Mimics the min-width media query by using the viewport width to determine which image should be displayed.</p>
+        <h3>Instructions</h3>
+        <p>Resize your browser window to see the image swap out.</p>
+    </div>
+
+    <div data-picture data-alt="Picturefill test">
+        <div data-src="img/default.png"></div>
+        <div data-src="img/320x90.png"   data-media="(min-width: 200px)"></div>
+        <div data-src="img/480x135.png"  data-media="(min-width: 321px)"></div>
+        <div data-src="img/640x180.png"  data-media="(min-width: 481px)"></div>
+        <div data-src="img/1024x228.png" data-media="(min-width: 641px)"></div>
+        <div data-src="img/1440x405.png" data-media="(min-width: 1025px)"></div>
+        <div data-src="img/1920x540.png" data-media="(min-width: 1441px)"></div>
+        <noscript><img src="img/noscript.png" alt="Picturefill test" /></noscript>
+    </div>
+
+    <h3>Code sample</h3>
+
+    <code><span class="nt">&lt;div</span> <span class="na">data-picture</span> <span class="na">data-alt=</span><span class="s">"Picturefill test"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/default.png"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/320x90.png"</span>   <span class="na">data-media=</span><span class="s">"(min-width: 200px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/480x135.png"</span>  <span class="na">data-media=</span><span class="s">"(min-width: 321px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/640x180.png"</span>  <span class="na">data-media=</span><span class="s">"(min-width: 481px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/1024x228.png"</span> <span class="na">data-media=</span><span class="s">"(min-width: 641px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/1440x405.png"</span> <span class="na">data-media=</span><span class="s">"(min-width: 1025px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/1920x540.png"</span> <span class="na">data-media=</span><span class="s">"(min-width: 1441px)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;noscript&gt;&lt;img</span> <span class="na">src=</span><span class="s">"img/noscript.png"</span> <span class="na">alt=</span><span class="s">"Picturefill test"</span> <span class="nt">/&gt;&lt;/noscript&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code>
+
+    <div class="info">
+        <p>Need more info? <a href="http://github.com/tysonmatanich/picturefill">View the project</a><br />Author: <a href="http://www.matanich.com">Tyson Matanich</a></p>
+    </div>
+</body>
+</html>

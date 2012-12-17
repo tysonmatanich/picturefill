@@ -1,30 +1,36 @@
-<!DOCTYPE html> 
+﻿<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset=utf-8 />
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title>Picturefill</title>
-		<script src="external/matchmedia.js"></script>
-		<script src="picturefill.js"></script>
-		<style>
-			body { font-family: sans-serif }
-			img {  max-width: 100% }
-		</style>
-	</head>
-	<body>
-		
-		<h1>Picturefill: A &lt;picture&gt; element polyfill</h1>
-				
-		<p>For more info: <a href="http://github.com/scottjehl/picturefill">see project home.</a></p>
-		
-		<div data-picture data-alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
-			<div data-src="external/imgs/small.jpg"></div>
-			<div data-src="external/imgs/medium.jpg" data-media="(min-width: 400px)"></div>
-			<div data-src="external/imgs/large.jpg" data-media="(min-width: 800px)"></div>
-			<div data-src="external/imgs/extralarge.jpg" data-media="(min-width: 1000px)"></div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">@-ms-viewport{width:device-width}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Picturefill</title>
+    <link rel="stylesheet" type="text/css" href="samples/css/main.css" />
+</head>
+<body>
+    <div class="info">
+        <h1>Picturefill</h1>
+        <h2>examples</h2>
+        <p>Working &lt;picture&gt; element polyfill examples</p>
+        <ul>
+            <li><a href="samples/min-width.html">min-width</a></li>
+            <li><a href="samples/max-width.html">max-width</a></li>
+            <li><a href="samples/min-device-pixel-width.html">min-device-pixel-width</a></li>
+            <li><a href="samples/max-device-pixel-width.html">max-device-pixel-width</a></li>
+            <li><a href="samples/min-device-pixel-ratio.html">min-device-pixel-ratio</a></li>
+            <li><a href="samples/noscript-fallback.html">noscript fallback #1</a></li>
+            <li><a href="samples/noscript-fallback-2.html">noscript fallback #2</a></li>
+            <li><a href="samples/data-disable-swap.html">data-disable-swap</a></li>
+            <li><a href="samples/data-disable-swap-above.html">data-disable-swap-above</a></li>
+            <li><a href="samples/data-disable-swap-below.html">data-disable-swap-below</a></li>
+            <li><a href="samples/compound-media-queries.html">compound media queries</a></li>
+            <li><a href="samples/resolve-last.html">resolveLast()</a></li>
+        </ul>
+    </div>
 
-			<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-			<noscript><img src="external/imgs/small.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia"></noscript>
-		</div>
-	</body>
+    <div class="info" style="margin-top: 1.5em;">
+        <p>Need more info? <a href="http://github.com/tysonmatanich/picturefill">View the project</a><br />Author: <a href="http://www.matanich.com">Tyson Matanich</a></p>
+    </div>
+</body>
 </html>
