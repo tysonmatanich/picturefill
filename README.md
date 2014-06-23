@@ -1,17 +1,17 @@
 # Picturefill
-A Responsive Images approach that you can use today that mimics the [proposed picture element](http://www.w3.org/TR/2013/WD-html-picture-element-20130226/) using `span`s, for safety sake.
+A Responsive Images approach that you can use today that mimics the [proposed picture element](http://www.w3.org/TR/2013/WD-html-picture-element-20130226/) using `span`s and adds additional features.
 
-
-* Author: Scott Jehl (c) 2012
+* Author: Tyson Matanich - http://matanich.com
+* Original Author: Scott Jehl (c) 2012
 * License: MIT/GPLv2
 
-**Demo URL:** [http://scottjehl.github.io/picturefill/](http://scottjehl.github.io/picturefill/)
+**Demo URL:** [http://tysonmatanich.github.io/picturefill/](http://tysonmatanich.github.io/picturefill/)
 
 **Note:** Picturefill works best in browsers that support CSS3 media queries. The demo page references (externally) the [matchMedia polyfill](https://github.com/paulirish/matchMedia.js/) which makes matchMedia work in `media-query`-supporting browsers that don't support `matchMedia`. `matchMedia` and the `matchMedia` polyfill are not required for `picturefill` to work, but they are required to support the `media` attributes on `picture` `source` elements. In non-media query-supporting browsers, the `matchMedia` polyfill will allow for querying native media types, such as `screen`, `print`, etc.
 
 ## Size and delivery
 
-Currently, `picturefill.js` compresses to around 498bytes (~0.5kb), after minify and gzip. To minify, you might try these online tools: [Uglify](http://marijnhaverbeke.nl/uglifyjs), [Yahoo Compressor](http://refresh-sf.com/yui/), or [Closure Compiler](http://closure-compiler.appspot.com/home). Serve with gzip compression.
+Currently, `picturefill.js` compresses to around 935bytes (~0.9kb), after minify and gzip. To minify, you might try these online tools: [Uglify](http://marijnhaverbeke.nl/uglifyjs), [Yahoo Compressor](http://refresh-sf.com/yui/), or [Closure Compiler](http://closure-compiler.appspot.com/home). Serve with gzip compression.
 
 ## Markup pattern and explanation
 
@@ -32,8 +32,6 @@ Mark up your responsive images like this.
 ```
 
 Each `span[data-src]` element’s `data-media` attribute accepts any and all CSS3 media queries—such as `min` or `max` width, or even `min-resolution` for HD (retina) displays.
-
-**NOTE:** if you need/prefer to use `div`s in your picturefill markup, you may want to grab v1.0.0: https://github.com/scottjehl/picturefill/tree/v1.0.0 . The current version here made the switch to `span` to better mimic an `img` element's inline nature, as well as fix a bug or two for WordPress users.
 
 ### Explained...
 
@@ -93,6 +91,33 @@ Picturefill natively supports HD(Retina) image replacement.  While numerous othe
 
 * Note: Supporting this many breakpoints quickly adds size to the DOM and increases implementation and maintenance time, so use this technique sparingly.
 
+### Other options
+
+The following are boolean attributes that can be added to the `span[data-picture]` element.
+
+* Adding `data-defer` causes the picture element to not get resolved until after the body onload event
+* Adding `data-disable-swap` causes the picture element to only get resolved once so other image sizes are not downloaded
+* Adding `data-disable-swap-above` causes the picture element to not evaluate `span[data-src]` elements above the current one
+* Adding `data-disable-swap-below` causes the picture element to not evaluate `span[data-src]` elements below the current one
+* Adding `data-ensure-img` causes the picture element to ensure an image gets loaded before replacing the current one
+
+#### resolveLast()
+
+Calling `picturefill.resolveLast()` directly after a picture element will cause it to get resolved before the entire DOM is ready. This tells picturefill to resolve the last `span[data-picture]` that is present in the DOM.
+
+```html
+<span data-picture data-alt="Alt text">
+	<span data-src="small.jpg"></span>
+	<span data-src="medium.jpg"     data-media="(min-width: 400px)"></span>
+	<span data-src="large.jpg"      data-media="(min-width: 800px)"></span>
+	<span data-src="extralarge.jpg" data-media="(min-width: 1000px)"></span>
+	<noscript>
+		<img src="small.jpg" alt="Alt text">
+	</noscript>
+</span>
+<script type="text/javascript">picturefill.resolveLast();</script>
+```
+
 ### Supporting IE Desktop
 
 Internet Explorer 8 and older have no support for CSS3 Media Queries, so in the examples above, IE will receive the first `data-src`
@@ -123,7 +148,3 @@ Picturefill is intentionally exposed to the global space, in the unusual situati
 ## Support
 
 Picturefill supports a broad range of browsers and devices (there are currently no known unsupported browsers), provided that you stick with the markup conventions provided.
-
-### AngularJS 
-
-Picturefill can be implementing in AngularJS apps using the [angular-picturefill directive](https://github.com/tinacious/angular-picturefill).
