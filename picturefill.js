@@ -104,7 +104,8 @@
 
             var matchSrc = matchedEl.getAttribute("data-src");
 
-            if( p.getAttribute( "data-ensure-img" ) === null ||
+            if( picImg.src === "" ||
+            	p.getAttribute( "data-ensure-img" ) === null ||
                 ( images[ matchSrc ] !== undefined && images[ matchSrc ].complete === true ) ||
                 document.images === undefined) {
                 // Update the image now
