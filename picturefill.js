@@ -6,9 +6,10 @@
     "use strict";
 
     var images = [];
+    var size = {};
+    var hasDeferred = false;
 
 	w.picturefill = function( defer ){
-	    var hasDeferred = false;
 	    var ps = w.document.getElementsByTagName("span");
 
         // Loop the pictures
@@ -24,10 +25,6 @@
                 resolvePicture( ps[ i ] );
             }
 		}
-
-        if( defer ){
-		    return hasDeferred;
-        }
     };
 
     w.picturefill.resolveLast = function (){
@@ -147,12 +144,18 @@
     if( w.addEventListener ){
 		w.addEventListener( "resize", w.picturefill, false );
 		w.addEventListener( "DOMContentLoaded", function(){
-		    if( w.picturefill(true) === false ){
-                // Only reprocess if deferred loading was used
-		        w.removeEventListener("load", w.picturefill, false);
-		    }
+		    size = {
+		        innerWidth: w.innerWidth,
+		        innerHeight: w.innerHeight
+		    };
+            w.picturefill( true );
 		}, false );
-		w.addEventListener( "load", w.picturefill, false );
+		w.addEventListener( "load", function(){
+            if( hasDeferred === true || size.innerWidth !== w.innerWidth || size.innerHeight !== w.innerHeight ){
+                // Only reprocess if size changed or deferred loading was used
+                w.picturefill();
+            }
+		}, false );
 	}
     else if( w.attachEvent ){
         w.attachEvent( "onload", w.picturefill );
