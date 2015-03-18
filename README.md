@@ -10,13 +10,13 @@ Demo URL: http://tysonmatanich.github.com/picturefill/
 
 **Note:** Picturefill includes three other scripts that help detect the following: viewport width, device pixel width, device pixel ratio. These scripts are also available on GitHub for standalone use.
 
-* [GetViewportWidth]:(http://github.com/tysonmatanich/GetViewportWidth)
-* [GetDevicePixelWidth]:(http://github.com/tysonmatanich/GetDevicePixelWidth)
-* [GetDevicePixelRatio]:(http://github.com/tysonmatanich/GetDevicePixelRatio)
+* [GetViewportWidth](http://github.com/tysonmatanich/GetViewportWidth)
+* [GetDevicePixelWidth](http://github.com/tysonmatanich/GetDevicePixelWidth)
+* [GetDevicePixelRatio](http://github.com/tysonmatanich/GetDevicePixelRatio)
 
 ## Size and delivery
 
-Currently, `picturefill.js` compresses to around 1,973 bytes (~1.9 KB), after minify and gzip. To minify, you might try these online tools: [Microsoft Ajax Minifier]:(http://ajaxmin.codeplex.com/), [Uglify]:(http://marijnhaverbeke.nl/uglifyjs), [Yahoo Compressor]:(http://refresh-sf.com/yui/), or [Closure Compiler](http://closure-compiler.appspot.com/home). Serve with gzip compression.
+Currently, `picturefill.js` compresses to around 1,973 bytes (~1.9 KB), after minify and gzip. To minify, you might try these online tools: [Microsoft Ajax Minifier](http://ajaxmin.codeplex.com/), [Uglify](http://marijnhaverbeke.nl/uglifyjs), [Yahoo Compressor](http://refresh-sf.com/yui/), or [Closure Compiler](http://closure-compiler.appspot.com/home). Serve with gzip compression.
 
 ## Markup pattern and explanation
 
