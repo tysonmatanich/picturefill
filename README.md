@@ -6,7 +6,7 @@ A Responsive Images approach that you can use today, that mimics the [proposed p
 * Original Author: Scott Jehl
 * License: MIT/GPLv2
 
-Demo URL: http://tysonmatanich.github.com/picturefill/
+Demo URL: http://tysonmatanich.github.io/picturefill/
 
 **Note:** Picturefill includes three other scripts that help detect the following: viewport width, device pixel width, device pixel ratio. These scripts are also available on GitHub for standalone use.
 
